@@ -19,10 +19,14 @@
                 nav.style.display = 'none';
             }
         }
+        document.getElementById('nav-button').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
         </script>
 </head>
 <body>
-   <header class="header">
+    <header class="header">
         <nav class="nav">
             <a href="index.html" class="nav-button">الرئيسية</a>
             <a href="familystats.html" class="nav-button">إحصائيات العائلة</a>
@@ -46,8 +50,18 @@
         </div>
         <div id="typing-container" class="typing-container">
             <span id="dots">..</span><span id="typing-text"></span>
-        </div>       
+        </div>
         <a href="https://discord.gg/SzRqVMGu" class="joinDiscord" target="_blank">أنضم الآن</a>
+    </div>
+    <div id="people-list-container">
+        <h2 class="best-title">THE BEST - الأفضل</h2>
+        <div class="people-list">
+            <div class="person">Price Worthington</div>
+            <div class="person">Abdrouf Worthington</div>
+            <div class="person">David Worthington</div>
+            <div class="person">Bonze Worthington</div>
+        </div>
+    </div>
     </div>
     <div id="loading-screen">
         <div class="spinner"></div>
