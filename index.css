@@ -1,0 +1,416 @@
+body {
+    background-image: url('background2.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 60px; 
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    background-color: #141414;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-button {
+    background-color: transparent;
+    opacity: 0.50;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: #1f1f1f;
+}
+
+@media (max-width: 375px) {
+    .nav-button {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .nav-button {
+        font-size: xx-small;
+        padding: 3px 25px;
+    }
+}
+
+
+#helloWorld h1 {
+    text-align: center;
+    font-family: Verdana;
+    color: white;
+    margin-top: 100px;
+}
+
+#iDrone {
+    text-align: center;
+    font-family: Verdana;
+    color: rgb(87, 87, 87);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.joinDiscord {
+    user-select: none;
+    border-radius: 17px;
+    width: 150px; 
+    height: 40px; 
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 10px; 
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #111111;
+    color: white;
+    position: relative; 
+    top: 10px;
+    transition: top 0.3s; 
+    text-decoration: none;
+}
+
+.joinDiscord:hover {
+    background-color: #666666;
+}
+
+@media (min-width: 768px) {
+    .joinDiscord {
+        width: 200px;
+        border-radius: 20px;
+        font-size: 20px; 
+        height: 50px;
+        top: -115px; 
+    }
+}
+
+.typing-container {
+    user-select: none;
+    font-family: 'Rubik', sans-serif;
+    opacity: 0.50;
+    color: white;
+    font-size: 2vw;
+    width: 80%;
+    max-width: 800px;
+    height: auto; 
+    position: absolute;
+    top: 30vh; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#dots {
+    color: white;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgb(255, 255, 255); }
+}
+
+@media (max-width: 600px) {
+    #helloWorld h1 {
+        margin-top: 50px;
+        font-size: 18px;
+    }
+
+    .joinDiscord {
+        width: 150px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .typing-container {
+        font-size: 20px;
+        height: 115px;
+        top: 30vh;
+    }
+
+    .nav-button {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+}
+#copyright {
+    opacity: 0.8;
+    font-family: 'Verdana', sans-serif;
+    position: absolute;
+    bottom: 10px;
+    color: #f0f0f0;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    #copyright {
+        margin-top: 25px;
+        font-size: 10px;
+    }
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #3b3b3b;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a0a0a020;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #636363;
+}
+#familyStory {
+    opacity: 0.8;
+    text-align: center;
+    font-family: 'Verdana', sans-serif;
+    position: absolute;
+    color: #f0f0f0;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#familyStory h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#familyStory p {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    #familyStory {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    
+    #familyStory h1 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    
+    #familyStory p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #familyStory {
+        font-size: 10px;
+        padding: 6px 12px;
+        width: 90%;
+    }
+    
+    #familyStory h1 {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+    
+    #familyStory p {
+        font-size: 10px;
+    }
+}
+
+/* Family Rules */
+#familyRules {
+    opacity: 0.8;
+    text-align: center;
+    font-family: 'Verdana', sans-serif;
+    position: absolute;
+    color: #f0f0f0;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#familyRules h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#familyRules p {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    #familyRules {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    
+    #familyRules h1 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    
+    #familyRules p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    #familyRules {
+        font-size: 10px;
+        padding: 6px 12px;
+        width: 90%;
+    }
+    
+    #familyRules h1 {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+    
+    #familyRules p {
+        font-size: 10px;
+    }
+}
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: #fff;
+    text-align: center;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #343434;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 0.2s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+.image {
+    background-image: url('background.png');
+    width: 100%;
+    height: 300px; /* ارتفاع الصورة، يمكنك تعديله حسب الحاجة */
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    background-color: rgb(13, 13, 14);
+    padding: 20px; 
+    min-height: calc(118vh - 300px);
+    min-width: 2000px;
+}
+
+#familyStats {
+    margin-top: 30px;
+    top: 100px;
+}
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #131313;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px;
+    }
+
+    .nav-button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
