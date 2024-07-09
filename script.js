@@ -67,8 +67,68 @@ window.addEventListener('load', function() {
     delayedImage.addEventListener('error', hideLoadingScreen);
 });
 
+function searchForWords() {
+    const button = document.getElementById('search-button');
+    const buttonText = button.querySelector('.button-text');
 
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
+    const searchTerms = {
+        input1: ["التفريق", "تفريق"],
+        input2: ["غير واقعي", "خارق عن الطبيعة", "خارق عن الطبيعه", "غير واقعية", "غير واقعيه"],
+        input3: ["هروب", "الهروب"],
+        input4: ["بالمركبة", "بالمركبه"],
+        input5: ["شخص", "قتل", "بدون سبب"],
+        input6: ["إعدام", "اعدام", "أعدام", "من قبل ", "أدمن", "ادمن", "مشرف"],
+    };
 
+    let notifications = [];
+
+    for (let i = 1; i <= 6; i++) {
+        const input = document.getElementById(`input${i}`);
+        const terms = searchTerms[`input${i}`];
+        let found = false;
+        for (const term of terms) {
+            if (input.value.includes(term)) {
+                found = true;
+                notifications.push({
+                    term: term,
+                    message: `لقد نجحت!`
+                });
+                break;
+            }
+        }
+        if (!found) {
+            notifications.push({
+                term: terms.join(' or '),
+                message: `لقد فشلت!`
+            });
+        }
+    }
+
+    const notification = document.getElementById('notification');
+    const overlay = document.getElementById('overlay');
+    const failureNotifications = notifications.filter(n => n.message.includes('فشلت'));
+
+    if (failureNotifications.length > 0) {
+        const firstFailure = failureNotifications[0];
+        notification.querySelector('.icon').textContent = '❌';
+        notification.querySelector('.message').textContent = firstFailure.message;
+        notification.className = 'notification failure';
+        notification.style.display = 'block';
+        overlay.style.display = 'block';
+    } else {
+        const successNotifications = notifications.filter(n => n.message.includes('نجحت'));
+        if (successNotifications.length > 0) {
+            const firstSuccess = successNotifications[0];
+            notification.querySelector('.icon').textContent = '✅';
+            notification.querySelector('.message').textContent = firstSuccess.message;
+            notification.className = 'notification success';
+            notification.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+    }
+}
+
+function closeNotification() {
+    document.getElementById('notification').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
