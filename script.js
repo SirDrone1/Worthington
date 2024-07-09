@@ -66,3 +66,9 @@ window.addEventListener('load', function() {
 
     delayedImage.addEventListener('error', hideLoadingScreen);
 });
+
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
