@@ -6,9 +6,9 @@ const texts = [
 ];
 const typingTextElement = document.getElementById('typing-text');
 const dotsElement = document.getElementById('dots');
-const typingSpeed = 100;
-const deletingSpeed = 50;
-const pauseDuration = 1000;
+const typingSpeed = 40;
+const deletingSpeed = 40;
+const pauseDuration = 500;
 
 let currentTextIndex = 0;
 let currentCharIndex = 0;
