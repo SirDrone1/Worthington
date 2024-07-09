@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>صفحة بحث</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleNav() {
+            var nav = document.querySelector('.nav');
+            if (nav.style.display === 'none' || nav.style.display === '') {
+                nav.style.display = 'flex';
+            } else {
+                nav.style.display = 'none';
+            }
+        }
+        document.getElementById('nav-button').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script></script>
+    <style>
+                h1 {
+            margin-top: 70px; 
+            text-align: center;
+        }
+        .notification {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+            z-index: 1000;
+            animation: popIn 0.5s ease-out;
+            opacity: 1;
+        }
+
+        .notification.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .notification.failure {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .notification .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+            animation: iconBounce 0.6s ease;
+        }
+
+        .notification .message {
+            margin-bottom: 20px;
+        }
+
+        .notification .button {
+            background-color: #4e44ce;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #4e44ce;
+            width: 150px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .notification .button:active {
+            background-color: #1e1e1e;
+            box-shadow: 0 0 15px #4e44ce;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes iconBounce {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="overlay" class="overlay"></div>
+<div id="notification" class="notification">
+    <div class="icon"></div>
+    <div class="message"></div>
+    <button class="button" onclick="closeNotification()">OK</button>
+</div>
+    <header class="header">
+        <nav class="nav">
+            <a href="https://discord.gg/SzRqVMGu" class="nav-button" target="_blank">
+                ورثينغتون
+                <i class="fas fa-link" style="margin-left: 5px;"></i>
+            </a>
+            <a href="https://discord.gg/wnashtime" class="nav-button" target="_blank">
+                وناسة تايم
+                <i class="fas fa-link" style="margin-left: 5px;"></i>
+            </a>
+            <a href="familyrules.html" class="nav-button">قوانين العائلة</a>
+            <a href="familystory.html" class="nav-button">قصة العائلة</a>
+            <a href="familystats.html" class="nav-button">إحصائيات العائلة</a>
+            <a href="test.html" class="nav-button">أختبر نفسك</a>
+
+            <a href="index.html" class="nav-button">الرئيسية</a>
+
+            
+
+        </nav>
+        <button style="color: white;" class="nav-toggle" onclick="toggleNav()">☰</button>
+    </header>
+    <div class="input-container">
+        <label for="input1">MG</label>
+        <input type="text" id="input1">
+    </div>
+    <div class="input-container">
+        <label for="input2">PG</label>
+        <input type="text" id="input2">
+    </div>
+    <div class="input-container">
+        <label for="input3">LTA</label>
+        <input type="text" id="input3">
+    </div>
+    <div class="input-container">
+        <label for="input4">VDM</label>
+        <input type="text" id="input4">
+    </div>
+    <div class="input-container">
+        <label for="input5">DM</label>
+        <input type="text" id="input5">
+    </div>
+    <div class="input-container">
+        <label for="input6">CK</label>
+        <input type="text" id="input6">
+    </div>
+    <button id="search-button" onclick="searchForWords()"><span class="button-text">التحقق من الإجابات</span></button>
+    <div id="notification" class="notification"></div>
+</div>
+<div id="copyright">© 2024 Worthington Copyrights - Developed By iDrone</div>
+    <script src="script.js"></script>
+</body>
+</html>
